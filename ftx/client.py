@@ -56,3 +56,13 @@ class FtxClient:
             if not data['success']:
                 raise Exception(data['error'])
             return data['result']
+
+    def get_balances(self) -> List[dict]:
+        return self._get('wallet/balances')
+
+    def get_balance_coin(self, coin: str) -> dict:
+        balance_coin = [balance for balance in self.get_balances()
+                        if balance['coin'] == coin]
+        if balance_coin == []:
+            return None
+        return balance_coin[0]
