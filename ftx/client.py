@@ -66,3 +66,12 @@ class FtxClient:
         if balance_coin == []:
             return None
         return balance_coin[0]
+
+    def post_quote_request(self, from_coin: str, to_coin: str, size: float) -> dict:
+        return self._post('otc/quotes', {   'fromCoin'  : from_coin,
+                                            'toCoin'    : to_coin,
+                                            'size'      : size
+                                        })
+
+    def post_accept_quote(self, quoteId: int) -> dict:
+        return self._post('otc/quotes/' + str(quoteId) + '/accept')
