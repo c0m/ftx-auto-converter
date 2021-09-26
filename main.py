@@ -1,6 +1,6 @@
 import threading
 from ftx.client import FtxClient
-from lending import auto_lending
+from converter import auto_converter
 from settings import API, SECRET, SUBACCOUNT
 
 
@@ -9,7 +9,7 @@ def main() -> None:
     client = FtxClient(api_key=API,
                        api_secret=SECRET,
                        subaccount_name=SUBACCOUNT)
-    auto_lending(client)
+    auto_converter(client)
 
 
 if __name__ == '__main__':
