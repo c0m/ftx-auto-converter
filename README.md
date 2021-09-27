@@ -11,7 +11,7 @@ Because in some markets with low liquidity, rates can become extremely high for 
 You may not want to keep the interest you earn in this token though for a variety of reasons, maybe you don't want this extra added to your long position, maybe you want to supplement other long positions, maybe you want to keep in fiat. Whatever you want to do, this is why this repository exists. 
 
 ## So how does it work?
-Before doing anything, set all currencies and tokens that you want to be targets for this to be loaned and set whatever interest rate you want, or stake them if applicable (e.g. SOL, SRM). This will make them not show up in your balance as available. **OTHERWISE THIS BALANCE WILL BE CONVERTED TO YOUR TARGET CURRENCY.** 
+Before doing anything, set all currencies and tokens that you want to be targets for this to be loaned and set whatever interest rate you want, or stake them if applicable (e.g. SOL, SRM). This will make them not show up in your balance as available. **OTHERWISE THIS BALANCE WILL BE CONVERTED TO YOUR TARGET CURRENCY. IF YOU ARE LENDING MONEY ON MARGIN CONSIDER WHETHER THIS MAKES SENSE FOR YOU, AS YOUR TARGET CURRENCY OR TOKEN MAY NOT COUNT TOWARDS YOUR COLLATERAL.** 
 
 This is designed to run in a Docker container. Fill out the settings.py file with your API keys, subaccount (if applicable), which ticker you want to convert to, and which tickers you want to convert from. Every hour, it will check all of the available balances of the currencies you want to convert from and converts it in your your target currency.
 
